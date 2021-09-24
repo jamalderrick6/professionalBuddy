@@ -1,0 +1,1 @@
+<PrivateRoute component={Dashboard} path="/dashboard" exact />
