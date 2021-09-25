@@ -12,9 +12,12 @@ const useStyles = (theme) => ({
   root: {
     flexGrow: 1,
   },
+  minGrid: {
+    justifyContent: "center",
+  },
   paper: {
     height: 200,
-    width: 160,
+    width: 200,
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -122,7 +125,12 @@ class ProfessionalsList extends React.Component {
     return (
       <Grid container className={classes.root} spacing={2}>
         <Grid item xs={12}>
-          <Grid container justifyContent="center" spacing={6}>
+          <Grid
+            container
+            justifyContent="center"
+            spacing={6}
+            className={classes.minGrid}
+          >
             {professionals.map((professional, index) => {
               return (
                 <Grid key={index} item>

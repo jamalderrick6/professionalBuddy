@@ -18,6 +18,7 @@ import SignUp from "../pages/auth/SignUp";
 import PublicRoute from "../routes/PublicRoute";
 import { isLogin } from "../Utils/Common";
 import history from "../Utils/history";
+import paths from "./paths";
 
 const privateChildRoutes = (Layout, routes) =>
   routes.map(({ children, path, component: Component }, index) =>
@@ -60,8 +61,6 @@ const privateChildRoutes = (Layout, routes) =>
 console.log("history", history.location);
 const Routes = () => (
   <Router history={history}>
-    {/* <Route path="/" exact />
-    <Route path="/dashboard" exact /> */}
     <Switch>
       {privateChildRoutes(DashboardLayout, dashboardRoutes)}
       <PublicRoute

@@ -11,7 +11,7 @@ const Card = styled(MuiCard)(spacing);
 const Spacer = styled.div(spacing);
 
 const ChartWrapper = styled.div`
-  height: 300px;
+  height: 200px;
   width: 100%;
 `;
 
@@ -29,7 +29,7 @@ function BarChart({ theme }) {
       "Sep",
       "Oct",
       "Nov",
-      "Dec"
+      "Dec",
     ],
     datasets: [
       {
@@ -40,7 +40,7 @@ function BarChart({ theme }) {
         hoverBorderColor: theme.palette.secondary.main,
         data: [54, 67, 41, 55, 62, 45, 55, 73, 60, 76, 48, 79],
         barPercentage: 0.75,
-        categoryPercentage: 0.5
+        categoryPercentage: 0.5,
       },
       {
         label: "This year",
@@ -50,52 +50,49 @@ function BarChart({ theme }) {
         hoverBorderColor: theme.palette.grey[300],
         data: [69, 66, 24, 48, 52, 51, 44, 53, 62, 79, 51, 68],
         barPercentage: 0.75,
-        categoryPercentage: 0.5
-      }
-    ]
+        categoryPercentage: 0.5,
+      },
+    ],
   };
 
   const options = {
     maintainAspectRatio: false,
     legend: {
-      display: false
+      display: false,
     },
     scales: {
       yAxes: [
         {
           gridLines: {
-            display: false
+            display: false,
           },
           stacked: false,
           ticks: {
-            stepSize: 20
-          }
-        }
+            stepSize: 20,
+          },
+        },
       ],
       xAxes: [
         {
           stacked: false,
           gridLines: {
-            color: "transparent"
-          }
-        }
-      ]
-    }
+            color: "transparent",
+          },
+        },
+      ],
+    },
   };
 
   return (
     <Card mb={1}>
       <CardContent>
         <Typography variant="h6" gutterBottom>
-          Bar Chart
+          Yearly Statistical Influence
         </Typography>
         <Typography variant="body2" gutterBottom>
-          A bar chart provides a way of showing data values represented as
-          vertical bars.
+          A representation of yearly growth of professional influence in pBuddy
         </Typography>
-
         <Spacer mb={6} />
-
         <ChartWrapper>
           <Bar data={data} options={options} />
         </ChartWrapper>
